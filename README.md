@@ -1,2 +1,5 @@
 # JCR-Cyclic-Multipole-Subsets
 The Multipole Subset Definition organizes the angular content of the JCR Cosmological Clock into a nested sequence of discrete harmonic channels Sℓ. Their progressive opening across the fifteen-era chronology culminates in the Dark-Energy era cascading a complete 25-dimensional space of spherical-harmonic standing-wave nodes. These nodes are the physical subset projections onto the macroscopic expansion rate.
+JCR-Cyclic-Multipole-Subsets is a geometric mathematical model. It organizes the angular content of the Cosmological Clock into nested multipole channels Sℓ. These open progressively across the fifteen-era chronology and culminate in a complete 25-dimensional space of spherical-harmonic standing-wave nodes. 
+The nodes are the geometric loci of the projection. The mathematics confirms the relations close. That is what the shapes make. That is what the repository states. 
+No additional claims about solving the Hubble tension are being attached here. The model is the geometric projection structure.
