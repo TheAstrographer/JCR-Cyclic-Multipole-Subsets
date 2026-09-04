@@ -1,0 +1,113 @@
+Complete List of Equations  
+(JCR Integrated Cosmological Clock & Cyclic Multipole Subset Framework)
+
+1. Scaled Cosmic Time
+\[
+u = \frac{N}{N_{\rm today}} = \frac{N}{10^{9}}
+\]
+\[
+u \in [0,1]
+\]
+
+2. Scale Factor
+\[
+a(N) = e^{\epsilon N}, \qquad \epsilon = 10^{-9}
+\]
+
+3. Redshift
+\[
+z = \frac{1}{a} - 1
+\]
+
+4. Comoving Distance (approximate)
+\[
+\chi(N) = 4500 \cdot \frac{N}{N_{\rm today}} = 4500\, u \quad (\rm Mpc)
+\]
+
+5. Base Hubble Parameter
+\[
+H_{\rm base}(z) = H_{\rm wind} \sqrt{\Omega_m (1+z)^3 + \Omega_\Lambda}
+\]
+\[
+H_{\rm wind} = 70.0,\quad \Omega_m = 0.3,\quad \Omega_\Lambda = 0.7
+\]
+
+6. Continuous Modulation / Suppression Factors
+\[
+f_{\rm mod}(z) = 1 + 5\, e^{-z/2}
+\]
+\[
+f_{\rm damp}(z) = e^{-z / \tau_{\rm damp}}, \qquad \tau_{\rm damp} = 5.8
+\]
+\[
+f_{\rm screen}(\chi) = e^{-\chi / \chi_{\rm screen}}, \qquad \chi_{\rm screen} = 4500\,\rm Mpc
+\]
+\[
+\mathcal{S}(u) = f_{\rm mod}(z) \cdot f_{\rm damp}(z) \cdot f_{\rm screen}(\chi)
+\]
+
+7. Local Geometric Torque Contribution
+\[
+\Delta H_{\rm torque} = \bigl( {\rm sh}{\rm geom\,base} \cdot a \cdot \sin\delta\phi{\rm torque} \bigr) \times \mathcal{S}(u) \times 0.528
+\]
+\[
+{\rm sh}{\rm geom\,base} = 3.170, \qquad \delta\phi{\rm torque} = 1.72113420759
+\]
+
+8. Total Expansion Rate
+\[
+H_{\rm total}(z,\chi) = H_{\rm base}(z) + \Delta H_{\rm torque}
+\]
+
+9. Present-Day Target Value
+\[
+H_0 = 70.00 + 3.17 = 73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}
+\]
+
+10. Multipole Subset Definition
+\[
+S_\ell = \bigl\{ (\ell,m) \bigm| m = -\ell,-\ell+1,\dots,+\ell \bigr\}
+\]
+\[
+\dim(S_\ell) = 2\ell + 1
+\]
+
+11. Total Visibility Space Dimension (Dark-Energy Era)
+\[
+\sum_{\ell=0}^{4} (2\ell + 1) = 1 + 3 + 5 + 7 + 9 = 25
+\]
+
+12. Phase-Lock Resonance Factor
+\[
+\phi(u) = 2\pi \, u \, w_{\rm winding}, \qquad w_{\rm winding} = 3.25
+\]
+\[
+\text{Phase-lock factor} = \sin\bigl(2\pi \, u \, \cdot \, 3.25\bigr)
+\]
+At \(u=1\):
+\[
+\sin(2\pi \cdot 3.25) = +1
+\]
+
+13. Spherical Harmonics (Standing-Wave Basis)
+Complex spherical harmonics:
+\[
+Y_{\ell m}(\theta,\phi)
+\]
+Real standing-wave combinations used for visualisation and nodal structure (Re\(Y_{\ell m}\) or standard real spherical harmonics).
+
+Nodal lines = loci where
+\[
+\operatorname{Re} Y_{\ell m}(\theta,\phi) = 0
+\]
+
+14. High-Symmetry Vertices
+Points on the unit sphere at which multiple nodal lines of a given mode (especially \(|m|=\ell\)) intersect; these are the preferred stable projection nodes of the 25-dimensional visibility space.
+
+Summary of the final dynamical statement
+
+At the present-day boundary (\(N=10^9\), \(u=1\)) the complete set of 25 spherical-harmonic standing-wave states is open. Their collective high-symmetry nodal structure releases the full local torque amplitude, yielding
+
+\[
+H_0 = 73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
