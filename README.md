@@ -1,2 +1,2 @@
 # JCR-Cyclic-Multipole-Subsets
-The natural spherical completion of the discrete-tick framework published at https://github.com/TheAstrographer/Joshua-Christopher-Ryan-s-Cosmo-Clock.
+The Multipole Subset Definition organises the angular content of the JCR Cosmological Clock into a nested sequence of discrete harmonic channels Sℓ. Their progressive opening across the fifteen-era chronology culminates, in the Dark-Energy era, in a complete 25-dimensional space of spherical-harmonic standing-wave nodes. These nodes are the geometric loci through which the microscopic angular bridge and topological phase slip are projected onto the macroscopic expansion rate, releasing the full local torque of 3.170kms−¹ Mpc−¹ and fixing H0 = 73.17kms−¹ Mpc−¹.
