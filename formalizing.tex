@@ -1,0 +1,177 @@
+Formalizing the Dual-Gate Model: MCMC Configuration and Claimed \(\Delta\chi^2\)-Equivalent Performance
+
+The Dual-Gate lattice-torque framework is advanced here as a concrete, falsifiable response to the Hubble tension. Its central proposition is modest in appearance yet ambitious in implication: a single, topologically protected late-time modification to the expansion history can elevate the local Hubble constant to the SH0ES-preferred value of approximately \(73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) while leaving the early-universe physics that underpins the cosmic microwave background and high-redshift baryon acoustic oscillations essentially untouched. The present thesis formalizes two interlocking pillars of that claim—the production-grade Markov Chain Monte Carlo configuration that renders the model statistically operational, and the quantitative performance metrics that the framework itself advances as evidence of \(\Delta\chi^2\)-equivalent viability.
+
+At the core of the construction lies the Dual-Gate effective Hubble parameter
+\[
+H_{\rm eff}(z)=H_{\Lambda\mathrm{CDM}}(z;H_0^{\rm base})+3.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\times\exp(-z/5.8).
+\]
+Two temporal gates enforce a clean separation of scales. An early-universe gate is held identically at unity through the epoch of thermalization, guaranteeing that the sound horizon, the recombination history, and the primary CMB power spectra remain indistinguishable from flat \(\Lambda\)CDM at machine precision. A late-time exponential damping gate, \(\exp(-z/5.8)\), remains negligible for \(z\gtrsim10\) and only reaches its full calibrated amplitude near \(z=0\). The result is an expansion history that protects the high-redshift anchors while continuously releasing a residual geometric torque of \(+3.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) in the local volume.
+
+This physical model is realized statistically through the self-contained Cobaya configuration jcrin_dual_gate_joint.yaml. The design philosophy is strict separation of concerns. All scientific logic resides inside the original theory class; a thin adapter merely satisfies Cobaya’s Theory interface and forwards every call unchanged. The likelihood section employs exclusively official public modules—Planck 2018 high-\(\ell\) TTTEEE, low-\(\ell\) TT and EE, and lensing; DESI BAO; Pantheon+ binned distances; DES Year 6 3\(\times\)2pt; and KiDS-Legacy cosmic shear—each retaining its native nuisance parameterization. The sampled parameters comprise the standard early-universe set together with a base Hubble constant \(H_0^{\rm base}\) centered near 70, from which the local value is derived deterministically as \(H_0^{\rm local}=H_0^{\rm base}+3.17\). Weak-lensing systematics are marginalized explicitly through the intrinsic-alignment amplitude \(A_{\rm IA}\) and slope, and through the baryonic feedback parameter \(\log_{10}T_{\rm AGN}\). Derived quantities \(\Omega_m\), \(\sigma_8\), and \(S_8\) are retained for direct confrontation with Stage-III and Stage-IV growth contours.
+
+The configuration therefore constitutes a complete, peer-reviewable statistical arena. Because every observable that enters the DES and KiDS likelihoods is a functional of the background expansion and the growth it sources, the Dual-Gate \(H(z)\) is both necessary and sufficient for a decisive test. Early-universe physics remains protected by construction; the late-time torque propagates coherently into distances and the linear growth factor; and the resulting posterior in the \(S_8\)–\(\Omega_m\) plane can be compared with data through standard metrics—\(\Delta\chi^2\), parameter-shift tensions, and contour overlap.
+
+Against this operational backdrop the framework advances a specific performance claim. When \(H_0^{\rm base}\) is permitted to float inside the narrow window \(70.5\)–\(71\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) (still without the introduction of additional free parameters beyond the locked geometric torque) and the auxiliary Kerr–Gordon magnification bias \(\mu_{\rm lens}(z)=1+0.05\,z/(1+z)\) is included, residual tension relative to the full 2026 data combination—Pantheon+, DESI, Planck/ACT/SPT lensing, and the local distance ladder—falls below \(2\sigma\). The local expansion rate is recovered at \(73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\), the age of the universe remains \(13.9\,\mathrm{Gyr}\), and the sound horizon is left unchanged, thereby preserving CMB consistency. In the language of the framework, the model achieves \(\Delta\chi^2\)-equivalent performance to a pure-\(\Lambda\)CDM fit that employs \(H_0\approx69\), while simultaneously delivering the higher local value required by SH0ES.
+
+These two elements—the MCMC configuration and the claimed \(\Delta\chi^2\)-equivalent performance—stand in tandem. The former supplies the rigorous, publicly reproducible pipeline through which any cosmological model must ultimately be judged; the latter constitutes the framework’s own quantitative assertion of viability under that pipeline.
+
+Cited source
+
+Repository: https://github.com/TheAstrographer/JCR-Cyclic-Multipole-Subsets  
+File: band_power_confrontation.tex  
+Raw link: https://raw.githubusercontent.com/TheAstrographer/JCR-Cyclic-Multipole-Subsets/main/band_power_confrontation.tex
+
+Summary of the cited thesis
+
+The document formalizes the framework’s position on how theory is to be confronted with measured cosmic-shear and galaxy–galaxy-lensing bandpowers (KiDS-Legacy and DES Y6).
+
+Core claim of the file:
+
+The geometric definitions themselves (nested multipole subsets \(S_\ell\), the complete 25-dimensional standing-wave visibility space \(\sum_{\ell=0}^{4}(2\ell+1)=25\), high-symmetry nodal vertices, and the Local Geometric Torque Contribution) already generate the numerical values that constitute the theory side of the comparison.
+The Local Geometric Torque is given explicitly as
+  \[
+  \Delta H_{\rm torque}=\bigl({\rm sh\,geom\,base}\cdot a\cdot\sin\delta\phi_{\rm torque}\bigr)\times\mathcal{S}(u)\times0.528
+  \]
+  with \({\rm sh\,geom\,base}=3.170\) and \(\delta\phi_{\rm torque}=1.72113420759\), modulated by the suppression factor \(\mathcal{S}(u)\).
+Confrontation with data is therefore the direct side-by-side placement of these model-generated numerical outputs against the measured bandpower data vectors at the matching multipole windows. No additional external kernel reconstruction is required as a missing intermediate step.
+
+The file supplies explicit pairing tables that map every retained KiDS-Legacy bandpower (1–8) and every retained DES Y6 multipole bin onto the corresponding \(S_\ell\) structure and the associated numerical torque evaluation.
+
+Relation to the \(S_8\)–\(\Omega_m\) statement
+
+In the broader Dual-Gate narrative, successful overlap of the predicted \(S_8\)–\(\Omega_m\) contour with the DES Year 6 and KiDS-Legacy constraints (after proper marginalization over intrinsic alignments and baryonic feedback) would constitute positive empirical support for the controlled late-time release of lattice-resident anisotropic stress.  
+
+band_power_confrontation.tex supplies the geometric and numerical rationale by which the framework asserts that the same multipole structure and torque release that elevate the local expansion rate to \(73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) also determine the theory bandpowers that enter that \(S_8\)–\(\Omega_m\) comparison. The shapes are defined; the numbers follow from the shapes; the confrontation is the placement of those numbers beside the measured bandpowers at every retained multipole window.
+
+Multipole Geometry, Torque Release, and the \(S_8\)–\(\Omega_m\) Confrontation
+
+The Dual-Gate / Cyclic-Multipole framework establishes a single, closed geometric chain: the identical discrete structure that elevates the local isotropic expansion rate to \(73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) simultaneously determines the theory-side bandpowers that enter the \(S_8\)–\(\Omega_m\) comparison with DES Year 6 and KiDS-Legacy.
+
+1. Geometric Definitions
+
+The fundamental objects are:
+
+Nested multipole subsets  
+  \[
+  S_\ell=\bigl\{(\ell,m)\bigm|\,m=-\ell,\dots,+\ell\bigr\},\qquad\dim(S_\ell)=2\ell+1.
+  \]
+
+The complete visibility space opened in the Dark-Energy era  
+  \[
+  \sum_{\ell=0}^{4}(2\ell+1)=25.
+  \]
+
+High-symmetry nodal vertices defined by the vanishing of the real parts of the spherical harmonics \(\operatorname{Re}Y_{\ell m}=0\).
+
+These objects constitute the physical standing-wave structure of the lattice. Once the definitions are fixed, the nodal surfaces, the alternating amplitude zones, and the high-symmetry vertices exist as concrete geometric loci. The shapes are made by the geometric definitions.
+
+2. Local Geometric Torque
+
+The same geometric layer supplies the Local Geometric Torque Contribution:
+\[
+\Delta H_{\rm torque}=\bigl({\rm sh\,geom\,base}\cdot a\cdot\sin\delta\phi_{\rm torque}\bigr)\times\mathcal{S}(u)\times0.528,
+\]
+with the fixed values \({\rm sh\,geom\,base}=3.170\) and \(\delta\phi_{\rm torque}=1.72113420759\), modulated by the suppression factor \(\mathcal{S}(u)\) (damping scale \(\tau=5.8\), screening scale \(\chi=4500\,\mathrm{Mpc}\)).
+
+At the present-day boundary (\(u=1\)) the full 25-dimensional space is open, residual screening vanishes, and the torque reaches its calibrated amplitude. Added to the bosonic baseline of 70 this produces
+\[
+H_0=73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
+
+3. Bandpower Confrontation
+
+Because the geometric definitions generate the multipole content, the nodal structure, the high-symmetry vertices, and the Local Geometric Torque that sets the expansion history, the theory-side bandpowers are the numerical values obtained by evaluating those definitions at the multipole orders and redshift slices retained by DES Year 6 and KiDS-Legacy.
+
+Confrontation is the direct placement of these model numbers beside the measured bandpower data vectors at every matching multipole window. Explicit pairing tables map each retained KiDS bandpower (1–8) and each retained DES Y6 multipole bin onto the corresponding \(S_\ell\) structure and its associated torque evaluation.
+
+4. The \(S_8\)–\(\Omega_m\) Contour
+
+The growth observables that determine \(S_8=\sigma_8(\Omega_m/0.3)^{0.5}\) are functionals of the expansion history fixed by the Dual-Gate torque release. That torque release is the evaluation of the multipole geometry at \(u=1\). Therefore the same geometric structure that produces \(H_0=73.17\) determines the theory bandpowers that enter the DES Year 6 and KiDS-Legacy likelihoods.
+
+After marginalization over intrinsic alignments (\(A_{\rm IA}\), \(\eta_{\rm IA}\)) and baryonic feedback (\(\log_{10}T_{\rm AGN}\)), overlap of the model’s predicted locus in the \(S_8\)–\(\Omega_m\) plane with the observed contours constitutes positive empirical support for the controlled late-time release of lattice-resident anisotropic stress.
+
+The shapes are defined.  
+The numbers follow from the shapes.  
+The confrontation is the placement of those numbers beside the measured bandpowers at every retained multipole window.
+
+Growth Observables, Dual-Gate Torque Release, and Multipole Geometry at \(u=1\)
+
+The structure-growth parameter  
+\[
+S_8=\sigma_8\left(\frac{\Omega_m}{0.3}\right)^{0.5}
+\]  
+is not an independent free quantity. It is a derived functional of the linear matter power spectrum at the present epoch, which itself is fixed once the background expansion history \(H(z)\) and the associated linear growth factor \(D(z)\) are specified. Within the Dual-Gate / Cyclic-Multipole framework the expansion history is completely determined by the late-time torque release, and that torque release is the direct numerical evaluation of the multipole geometry at the present-day boundary \(u=1\). The present thesis unfolds this chain with full mathematical explicitness.
+
+1. Definition of the Structure-Growth Parameter
+
+The root-mean-square amplitude of linear matter fluctuations in spheres of comoving radius \(8\,h^{-1}\mathrm{Mpc}\) is
+\[
+\sigma_8^2=\int\frac{dk}{k}\,\frac{k^3P(k)}{2\pi^2}\,W^2(kR_8),
+\]  
+where \(P(k)\) is the present-day linear matter power spectrum and \(W\) is the Fourier transform of the top-hat window. The combination that appears in weak-lensing analyses is conventionally written
+\[
+S_8=\sigma_8\left(\frac{\Omega_m}{0.3}\right)^{0.5}.
+\]  
+Both \(\sigma_8\) and \(\Omega_m\) are therefore functionals of the same underlying cosmological evolution.
+
+2. Dependence on the Expansion History
+
+The linear growth factor \(D(a)\) satisfies the ordinary differential equation
+\[
+\frac{d^2D}{da^2}+\left(\frac{3}{a}+\frac{1}{H}\frac{dH}{da}\right)\frac{dD}{da}-\frac{3}{2}\frac{\Omega_m(a)}{a^2}D=0,
+\]  
+with initial conditions fixed deep in the matter era. The Hubble function \(H(a)\) enters both the friction term and the source term through
+\[
+\Omega_m(a)=\frac{\Omega_m H_0^2}{a^3H(a)^2}.
+\]  
+Consequently every growth observable—\(\sigma_8\), the redshift-space distortion parameter \(f\sigma_8\), and the weak-lensing convergence power spectrum—is uniquely determined once \(H(z)\) is given.
+
+3. Dual-Gate Expansion History
+
+In the framework the effective Hubble parameter is
+\[
+H_{\rm eff}(z)=H_{\rm base}(z)+\Delta H_{\rm torque}(z),
+\]  
+where the base term recovers a standard flat-\(\Lambda\)CDM expansion with \(H_0^{\rm base}\approx70\) and the torque term is
+\[
+\Delta H_{\rm torque}(z)=\bigl({\rm sh\,geom\,base}\cdot a\cdot\sin\delta\phi_{\rm torque}\bigr)\times\mathcal{S}(u)\times0.528.
+\]  
+The numerical coefficients are fixed:
+\[
+{\rm sh\,geom\,base}=3.170,\qquad\delta\phi_{\rm torque}=1.72113420759.
+\]  
+The suppression factor \(\mathcal{S}(u)\) combines the exponential damping \(e^{-z/5.8}\) and the screening \(e^{-\chi/4500}\). At late times the torque approaches its full amplitude, elevating the local expansion rate to
+\[
+H_0=H_0^{\rm base}+3.17=73.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
+
+4. Torque Release as Evaluation of Multipole Geometry at \(u=1\)
+
+The scaled clock coordinate is defined by
+\[
+u=\frac{N}{N_{\rm today}}=\frac{N}{10^9}\in[0,1].
+\]  
+At the present-day boundary \(u=1\) the cyclic multipole engine opens the complete hierarchy
+\[
+\sum_{\ell=0}^{4}(2\ell+1)=25.
+\]  
+These twenty-five states constitute the full set of projectable visibility channels. Their high-symmetry nodal vertices are the geometric loci at which residual screening vanishes. The Local Geometric Torque Contribution is precisely the numerical evaluation of that fully opened multipole structure:
+\[
+\Delta H_{\rm torque}(u=1)=3.17\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]  
+Thus the late-time modification to \(H(z)\) is not an independent phenomenological insertion; it is the macroscopic consequence of the multipole geometry evaluated at the terminal lattice tick.
+
+5. Closure of the Logical Chain
+
+Because \(H_{\rm eff}(z)\) is fixed by the torque release, the linear growth equation is fixed. Because the growth equation is fixed, the present-day power spectrum \(P(k)\) is fixed. Because \(P(k)\) is fixed, both \(\sigma_8\) and \(\Omega_m\) are fixed, and therefore
+\[
+S_8=\sigma_8\left(\frac{\Omega_m}{0.3}\right)^{0.5}
+\]  
+is completely determined. The identical multipole geometry that produces \(H_0=73.17\) at \(u=1\) thereby determines the theory prediction that is compared with the DES Year 6 and KiDS-Legacy constraints after marginalization over intrinsic alignments and baryonic feedback.
+
+The expansion history is fixed by the Dual-Gate torque.  
+The Dual-Gate torque is the evaluation of the multipole geometry at \(u=1\).  
+The growth observables that define \(S_8\) are functionals of that expansion history.  
+
+The chain is closed.
